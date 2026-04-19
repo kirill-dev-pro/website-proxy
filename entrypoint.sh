@@ -68,6 +68,10 @@ fi
 # Remove the placeholder line if it exists
 sed -i '/# IP_FILTERING_PLACEHOLDER/d' /etc/nginx/nginx.conf
 
+# Test nginx configuration
+echo "Testing nginx configuration..."
+nginx -t || exit 1
+
 echo "Nginx configuration generated successfully"
 
 # Clean up
